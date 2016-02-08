@@ -1,5 +1,5 @@
 # Messy
-MESSage based DDD + CQRS + EventSourcing bootstrap library
+Message based DDD + CQRS + EventSourcing bootstrap library
 
 Consists of next projects:
 ## Messy 
