@@ -36,4 +36,18 @@ Implementation of event-sourcing database context interfaces from Messy with the
 
 ##### Depends on packages:
 * Autofac
-* Messy.AdoPersistence
+
+## Messy.MassTransitIntergration
+Leveraging wrapper around MassTransit + RabbitMq to implement fast and scalable message bus. 
+
+* Encapsulated from direct dependencies (well, mostly. State machines are too hard and not really benefiting to encapsulate)
+* Message validation via FluentValidation
+* Scheduling via Quartz.Net
+* Extensions methods for Automatonymous state machine that allows to manually raise event without losing ConsumeContext of MassTransit
+* Autofac integration allows to auto-wire message consumers properly for one or separate queues
+
+##### Depends on packages:
+* Autofac
+* Automatonymous
+* MassTransit
+* Quartz
