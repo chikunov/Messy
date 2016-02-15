@@ -1,7 +1,7 @@
 # Messy
 Message based DDD + CQRS + EventSourcing bootstrap library
 
-Consists of next projects:
+Includes next projects:
 ## Messy 
 Base classes and interfaces for
 * Domain-driven-development (Entity, Value object, Aggregate, Bounded context, Event types, Messaging, Message bus),
