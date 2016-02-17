@@ -4,6 +4,7 @@ using Messy.DDD;
 using Messy.DDD.DatabaseContexts;
 using Messy.EventSourcingPersistence.Contexts;
 using Messy.MassTransitIntegration;
+using Messy.Messaging;
 using Messy.Serialization;
 using Messy.Serialization.Serializers;
 
@@ -22,8 +23,7 @@ namespace Messy.EventSourcingPersistence
         {
             builder.RegisterModule(new AdoPersistenceModule(_contextName, _contextName));
 
-            builder.RegisterType<JsonSerializer>().As<ISerialize>();
-            builder.RegisterType<MassTransitDomainEventsDispatcher>().As<IDomainEventsDispatcher>().SingleInstance();
+            builder.RegisterModule(new MassTransitIntegrationModule());
 
             builder.RegisterType<EventSourcingDataContext>().As<IWriteDataContext>().SingleInstance();
             builder.RegisterType<EventSourcingDataContext>().As<IQueryDataContext>().SingleInstance();
