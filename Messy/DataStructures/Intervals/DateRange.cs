@@ -5,7 +5,7 @@ using Messy.Extensions;
 namespace Messy.DataStructures.Intervals
 {
     /// <summary>
-    ///     Интервал дат в днях
+    ///     Date interval
     /// </summary>
     public class DateRange : Range<DateTimeOffset>
     {
@@ -19,7 +19,7 @@ namespace Messy.DataStructures.Intervals
         }
 
         /// <summary>
-        ///     Получить набор дней, входящих в интервал
+        ///     Get collection of dates between the interval endpoints
         /// </summary>
         public DateTimeOffset[] GetDays()
         {

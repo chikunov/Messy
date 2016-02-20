@@ -3,18 +3,18 @@
 namespace Messy.DataStructures.Intervals
 {
     /// <summary>
-    ///     Интервал типа T
+    ///     Interval of points of the type T
     /// </summary>
-    /// <typeparam name="TPoint">Тип точки интервала</typeparam>
+    /// <typeparam name="TPoint">Point type</typeparam>
     public class Range<TPoint> where TPoint : struct, IComparable
     {
         /// <summary>
-        ///     Конец интервала
+        ///     Left bound of the interval
         /// </summary>
         public TPoint End { get; }
 
         /// <summary>
-        ///     Начало интервала
+        ///     Right bound of the interval
         /// </summary>
         public TPoint Start { get; }
 
@@ -38,7 +38,7 @@ namespace Messy.DataStructures.Intervals
         }
 
         /// <summary>
-        ///     Пустой ли интервал
+        ///     Is interval empty
         /// </summary>
         public bool IsEmpty()
         {
@@ -46,18 +46,18 @@ namespace Messy.DataStructures.Intervals
         }
 
         /// <summary>
-        ///     Пересекается ли интервал с данным интервалом
+        ///     Is overlapped with the given interval
         /// </summary>
-        /// <param name="secondRange">Данный интервал</param>
-        public bool IsOverlaps(Range<TPoint> secondRange)
+        /// <param name="secondRange">Interval</param>
+        public bool IsOverlapped(Range<TPoint> secondRange)
         {
             return !(secondRange.End.CompareTo(Start) < 0 || secondRange.Start.CompareTo(End) > 0);
         }
 
         /// <summary>
-        ///     Содержит ли интервал данную точку
+        ///     Does interval contain the given point
         /// </summary>
-        /// <param name="value">Точка интервала</param>
+        /// <param name="value">Point of the interval</param>
         public bool Contains(TPoint value)
         {
             return value.CompareTo(Start) >= 0 && value.CompareTo(End) <= 0;

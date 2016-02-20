@@ -7,22 +7,19 @@ namespace Messy.DDD.DatabaseContexts
     public interface IQueryDataContext
     {
         /// <summary>
-        ///     Получить агрегат определенной версии по идентификатору
+        ///     Get aggregate version by ID
         /// </summary>
-        /// <typeparam name="TAggregate">Тип агрегата</typeparam>
-        /// <param name="id">Идентификатор агрегата</param>
-        /// <param name="useSnapshots">
-        ///     Использовать ли снимки состояния агрегата. Даст прирост скорости, если агрегат с большим
-        ///     количеством версий (событий). По умолчанию не используется
-        /// </param>
-        /// <param name="version">Версия агрегата для загрузки. null для возврата последней версии</param>
+        /// <typeparam name="TAggregate">Aggregate type</typeparam>
+        /// <param name="id">Aggregate ID</param>
+        /// <param name="useSnapshots">Use aggregate snapshots. Speeds things up for aggregates with large event streams. Slows things down otherwise</param>
+        /// <param name="version">Aggregate version. Omit for the latest version</param>
         [ItemCanBeNull]
         Task<TAggregate> GetById<TAggregate>(Guid id, bool useSnapshots = false, int? version = null) where TAggregate : class, IAggregate;
 
         /// <summary>
-        ///     Проверка существования агрегата по его идентификатору
+        ///     Check existence of the aggregate by ID
         /// </summary>
-        /// <param name="id">Идентификатор агрегата</param>
+        /// <param name="id">Aggregate ID</param>
         Task<bool> Exists(Guid id);
     }
 }

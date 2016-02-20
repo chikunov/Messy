@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Messy.DataStructures
 {
     /// <summary>
-    ///     Identifier to integer and backwards mapper. Usefull for third-party libraries that don't support guids.
+    ///     Identifier to integer both-ways mapper. Usefull for third-party libraries that don't support guids.
     /// </summary>
     public class IdToIntMapping
     {

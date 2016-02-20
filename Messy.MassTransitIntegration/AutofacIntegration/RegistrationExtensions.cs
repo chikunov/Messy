@@ -14,10 +14,10 @@ namespace Messy.MassTransitIntegration.AutofacIntegration
     public static class RegistrationExtensions
     {
         /// <summary>
-        ///     Регистрация обработчиков по сборкам в DI контейнере
+        ///     Register message handlers from assemblies in the AutoFac container 
         /// </summary>
-        /// <param name="builder">Контейнер</param>
-        /// <param name="handlerAssemblies">Сборки, в которых проводится поиск</param>
+        /// <param name="builder">Autofac container builder</param>
+        /// <param name="handlerAssemblies">Assemblies to check</param>
         public static void RegisterHandlers(this ContainerBuilder builder, params Assembly[] handlerAssemblies)
         {
             var messageHandlers = GetMessageHandlersInAssemblies(handlerAssemblies);
@@ -41,10 +41,6 @@ namespace Messy.MassTransitIntegration.AutofacIntegration
             }
         }
 
-        /// <summary>
-        ///     Получение обработчиков сообщений по сборкам
-        /// </summary>
-        /// <param name="assemblies"></param>
         private static MessageHandler[] GetMessageHandlersInAssemblies(Assembly[] assemblies)
         {
             return

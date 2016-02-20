@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MigrateDatabaseError" xml:space="preserve">
-    <value>Ошибка при миграции базы данных</value>
+    <value>Database migration error</value>
   </data>
   <data name="MigrateDatabaseFinished" xml:space="preserve">
-    <value>База данных успешно обновлена до последней версии</value>
+    <value>Database successfully migrated to the latest version</value>
   </data>
   <data name="MigrateDatabaseStart" xml:space="preserve">
-    <value>Запуск миграции базы данных</value>
+    <value>Database migration started</value>
   </data>
   <data name="NotCommitedScripts" xml:space="preserve">
-    <value>Следующие скрипты не были применены: '{0}'</value>
+    <value>Not commited scripts: '{0}'</value>
   </data>
 </root>

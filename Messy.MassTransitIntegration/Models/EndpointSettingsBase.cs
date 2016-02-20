@@ -3,22 +3,22 @@
     public abstract class EndpointSettingsBase
     {
         /// <summary>
-        ///     Число одновременно обрабатываемых сообщений
+        ///     Limit of concurrently processing messages
         /// </summary>
         public int? ConcurrencyLimit { get; protected set; }
 
         /// <summary>
-        ///     Значение Prefetch RabbitMQ
+        ///     RabbitMQ prefetch value
         /// </summary>
         public ushort PrefetchCount { get; protected set; }
 
         /// <summary>
-        ///     Очищать очередь при запуске
+        ///     Purge queue on startup
         /// </summary>
         public bool PurgeOnStartup { get; protected set; }
 
         /// <summary>
-        ///     Наименование очереди
+        ///     Queue name
         /// </summary>
         public string QueueName { get; protected set; }
     }

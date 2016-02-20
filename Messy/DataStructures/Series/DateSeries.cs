@@ -10,7 +10,7 @@ namespace Messy.DataStructures.Series
     /// <summary>
     ///     Series of points with values per day
     /// </summary>
-    /// <typeparam name="TPoint">Type of point</typeparam>
+    /// <typeparam name="TPoint">Type of points</typeparam>
     public class DateSeries<TPoint> : IEnumerable<KeyValuePair<DateTimeOffset, TPoint>>
     {
         public TPoint this[DateTimeOffset date]
@@ -47,7 +47,7 @@ namespace Messy.DataStructures.Series
         }
 
         /// <summary>
-        ///     Translate to another DateSeries using converter
+        ///     Translate to another DateSeries using given converter
         /// </summary>
         /// <typeparam name="TOther">New series point type</typeparam>
         /// <param name="converter">Converter function for translation</param>
@@ -64,7 +64,7 @@ namespace Messy.DataStructures.Series
 
 
         /// <summary>
-        ///     Translate to another DateSeries using converter
+        ///     Translate to another DateSeries using given converter
         /// </summary>
         /// <typeparam name="TOther">New series point type</typeparam>
         /// <param name="converter">Converter function for translation</param>
@@ -80,10 +80,10 @@ namespace Messy.DataStructures.Series
         }
 
         /// <summary>
-        ///     Get gapless series on interval using default value of gaps
+        ///     Get gapless series on the interval using a default value for gaps
         /// </summary>
         /// <param name="dateRange">Date interval</param>
-        /// <param name="defaultValue">Default value for gaps</param>
+        /// <param name="defaultValue">Default value for the gaps</param>
         public DateSeries<TPoint> GetGaplessSeries(DateRange dateRange, TPoint defaultValue)
         {
             var dateSeries = new DateSeries<TPoint>();
@@ -175,9 +175,9 @@ namespace Messy.DataStructures.Series
         }
 
         /// <summary>
-        ///     Содержит ли ряд значение на дату
+        ///     Does series contain point on date
         /// </summary>
-        /// <param name="date">Дата</param>
+        /// <param name="date">Date</param>
         public bool ContainsPointOnDate(DateTimeOffset date)
         {
             date = date.WithoutTime();
@@ -186,9 +186,9 @@ namespace Messy.DataStructures.Series
         }
 
         /// <summary>
-        ///     Есть ли у данных рядов общие точки
+        ///     Does an interval have common points with the given interval
         /// </summary>
-        /// <param name="otherDateSeries">Ряд для сравнения</param>
+        /// <param name="otherDateSeries">Another interval</param>
         public bool HasCommonPoints(DateSeries<TPoint> otherDateSeries)
         {
             var dates = otherDateSeries.GetDates();
@@ -196,10 +196,10 @@ namespace Messy.DataStructures.Series
         }
 
         /// <summary>
-        ///     Объединить два подневных ряда с помощью функции объединения, применяемого к каждой точке
+        ///     Merge with the given interval using merger-function
         /// </summary>
-        /// <param name="other">Другой ряд</param>
-        /// <param name="merger">Функция объединения</param>
+        /// <param name="other">Another interval</param>
+        /// <param name="merger">Merge function</param>
         public DateSeries<TPoint> Merge(DateSeries<TPoint> other, Func<TPoint, TPoint, TPoint> merger)
         {
             var seriesInterval = GetDateRange();

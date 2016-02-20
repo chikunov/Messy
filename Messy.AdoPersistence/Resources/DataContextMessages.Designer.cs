@@ -61,7 +61,7 @@ namespace Messy.AdoPersistence.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ошибка при миграции базы данных.
+        ///   Looks up a localized string similar to Database migration error.
         /// </summary>
         internal static string MigrateDatabaseError {
             get {
@@ -70,7 +70,7 @@ namespace Messy.AdoPersistence.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to База данных успешно обновлена до последней версии.
+        ///   Looks up a localized string similar to Database successfully migrated to the latest version.
         /// </summary>
         internal static string MigrateDatabaseFinished {
             get {
@@ -79,7 +79,7 @@ namespace Messy.AdoPersistence.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Запуск миграции базы данных.
+        ///   Looks up a localized string similar to Database migration started.
         /// </summary>
         internal static string MigrateDatabaseStart {
             get {
@@ -88,7 +88,7 @@ namespace Messy.AdoPersistence.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Следующие скрипты не были применены: &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Not commited scripts: &apos;{0}&apos;.
         /// </summary>
         internal static string NotCommitedScripts {
             get {

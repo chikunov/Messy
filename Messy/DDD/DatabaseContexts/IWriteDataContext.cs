@@ -6,9 +6,9 @@ namespace Messy.DDD.DatabaseContexts
     public interface IWriteDataContext : IQueryDataContext
     {
         /// <summary>
-        ///     Сохранить агрегат
+        ///     Save aggregate
         /// </summary>
-        /// <param name="aggregate">Агрегат</param>
+        /// <param name="aggregate">Aggregate</param>
         Task Save([NotNull] IAggregate aggregate);
     }
 }

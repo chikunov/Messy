@@ -4,7 +4,7 @@ namespace Messy
 {
     /// <summary>
     ///     Sequential guids generator based on native Windows uuid generation methods. 
-    ///     Falls back to NHibernate's method of COMBs generation.
+    ///     Falls back to the NHibernate's method of COMBs generation.
     /// </summary>
     public static class IdGenerator
     {

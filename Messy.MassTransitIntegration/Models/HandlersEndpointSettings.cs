@@ -6,7 +6,7 @@ namespace Messy.MassTransitIntegration.Models
     public class HandlersEndpointSettings : EndpointSettingsBase
     {
         /// <summary>
-        ///     Массив типов обработчиков
+        ///     Handler types collection
         /// </summary>
         public Type[] HandlerTypes { get; private set; }
 

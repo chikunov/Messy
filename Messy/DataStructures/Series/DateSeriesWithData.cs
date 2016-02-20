@@ -1,20 +1,17 @@
 ﻿namespace Messy.DataStructures.Series
 {
     /// <summary>
-    ///     Подневный временной ряд со связанной информацией
+    ///     Date series with additional information
     /// </summary>
-    /// <typeparam name="TAdditionalData">Тип связанной информации</typeparam>
-    /// <typeparam name="TPoint">Тип точек временного ряда</typeparam>
+    /// <typeparam name="TAdditionalData">Type of additional information</typeparam>
+    /// <typeparam name="TPoint">Type of points</typeparam>
     public class DateSeriesWithData<TAdditionalData, TPoint>
     {
         /// <summary>
-        ///     Дополнительная информация, связанная с временным рядом
+        ///     Additional information related to the series
         /// </summary>
         public TAdditionalData Data { get; private set; }
 
-        /// <summary>
-        ///     Подневный временной ряд
-        /// </summary>
         public DateSeries<TPoint> Series { get; private set; }
 
         public DateSeriesWithData(TAdditionalData data, DateSeries<TPoint> series)
