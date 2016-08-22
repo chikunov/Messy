@@ -32,7 +32,7 @@ Simple database access based on configured Entity Framework. Added custom naming
 * Entity Framework
 
 ## Messy.EventSourcingPersistence
-Implementation of event-sourcing database context interfaces from Messy with the help of Messy.AdoPersistence. Implements simple and batch data context. Contains migrations for events and snapshot tables.
+Implementation of event-sourcing database context interfaces from Messy with the help of Messy.AdoPersistence. Contains singular and batch data context, migrations for events and snapshot tables.
 
 ##### Depends on packages:
 * Autofac
